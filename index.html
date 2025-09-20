@@ -1,11 +1,209 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-  <meta charset="utf-8">
-  <title>Xin chào, tôi là AnhHa</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - AnhHa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Roboto", sans-serif;
+      background: #f4f6f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      color: white;
+    }
+    header img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 15px;
+    }
+    header h1 {
+      margin: 10px 0;
+      font-size: 2.2em;
+    }
+    header p {
+      font-size: 1.1em;
+    }
+    nav {
+      background: white;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #0077b6;
+    }
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    section h2 {
+      margin-top: 0;
+      color: #0077b6;
+    }
+    .skills span {
+      display: inline-block;
+      margin: 6px;
+      padding: 6px 12px;
+      background: #e3f2fd;
+      color: #0277bd;
+      border-radius: 8px;
+      font-size: 0.9em;
+    }
+    .timeline {
+      position: relative;
+      margin: 20px 0;
+      padding-left: 25px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #4facfe;
+    }
+    .timeline-item {
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 5px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #00f2fe;
+      border: 2px solid white;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background: #333;
+      color: white;
+    }
+    .social-links a {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 1.2em;
+      text-decoration: none;
+      color: white;
+      background: #0077b6;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .social-links a:hover {
+      background: #023e8a;
+    }
+  </style>
 </head>
 <body>
-  <h1>Chào mừng đến với GitHub Page của tôi</h1>
-  <p>Tôi là một người yêu thích khoa học, lịch sử, và văn hóa.</p>
+
+  <!-- HEADER -->
+  <header>
+    <img src="https://i.imgur.com/4ZQZ4Z0.png" alt="Avatar"> <!-- thay link avatar -->
+    <h1>Xin chào, tôi là AnhHa</h1>
+    <p>Người yêu thích khoa học, lịch sử, văn hóa & giáo dục</p>
+    <div class="social-links">
+      <a href="https://github.com/your-username" target="_blank">GitHub</a>
+      <a href="mailto:yourname@gmail.com">Email</a>
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#about">Giới thiệu</a>
+    <a href="#skills">Kỹ năng</a>
+    <a href="#experience">Kinh nghiệm</a>
+    <a href="#projects">Dự án</a>
+    <a href="#contact">Liên hệ</a>
+  </nav>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>👤 Giới thiệu</h2>
+    <p>Tôi là một người đam mê khám phá tri thức, thích sưu tầm hình ảnh về thiên nhiên, di sản và văn hóa. 
+    Hiện tại tôi làm công việc quản lý nội dung trên mạng xã hội và hỗ trợ sinh viên mới nhập học.</p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>🛠️ Kỹ năng</h2>
+    <div class="skills">
+      <span>Quản lý mạng xã hội</span>
+      <span>Thiết kế nội dung</span>
+      <span>Lịch sử & văn hóa</span>
+      <span>Giáo dục & mentoring</span>
+      <span>Photoshop / Canva</span>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2>📌 Kinh nghiệm</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>2019 - 2022</h3>
+        <p>Quản lý fanpage hỗ trợ sinh viên năm nhất</p>
+      </div>
+      <div class="timeline-item">
+        <h3>2022 - nay</h3>
+        <p>Social Media Manager: viết bài, thiết kế banner, chia sẻ nội dung khoa học - văn hóa</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>📂 Dự án</h2>
+    <ul>
+      <li>📖 Blog chia sẻ kiến thức khoa học & lịch sử</li>
+      <li>🎥 Video giới thiệu về các di sản UNESCO</li>
+      <li>📊 Quản lý fanpage sinh viên mới nhập học</li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>📩 Liên hệ</h2>
+    <p>Email: <a href="mailto:yourname@gmail.com">yourname@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/your-username" target="_blank">github.com/your-username</a></p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 AnhHa | Thiết kế với ❤️ và GitHub Pages</p>
+  </footer>
+
 </body>
 </html>
