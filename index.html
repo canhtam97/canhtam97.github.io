@@ -7,18 +7,36 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-color: #f4f6f9;
+      --text-color: #333;
+      --card-bg: #fff;
+      --header-gradient: linear-gradient(135deg, #4facfe, #00f2fe);
+      --link-color: #0077b6;
+      --shadow: rgba(0, 0, 0, 0.08);
+    }
+    body.dark {
+      --bg-color: #1e1e2e;
+      --text-color: #eaeaea;
+      --card-bg: #2a2a3c;
+      --header-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      --link-color: #4facfe;
+      --shadow: rgba(0, 0, 0, 0.6);
+    }
     body {
       margin: 0;
       font-family: "Roboto", sans-serif;
-      background: #f4f6f9;
-      color: #333;
+      background: var(--bg-color);
+      color: var(--text-color);
       line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
     }
     header {
       text-align: center;
       padding: 60px 20px;
-      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      background: var(--header-gradient);
       color: white;
+      position: relative;
     }
     header img {
       width: 140px;
@@ -34,8 +52,24 @@
     header p {
       font-size: 1.1em;
     }
+    #toggle-dark {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      background: rgba(255,255,255,0.2);
+      color: white;
+      transition: background 0.3s;
+    }
+    #toggle-dark:hover {
+      background: rgba(255,255,255,0.35);
+    }
     nav {
-      background: white;
+      background: var(--card-bg);
       display: flex;
       justify-content: center;
       gap: 25px;
@@ -43,28 +77,30 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 8px var(--shadow);
+      transition: background 0.3s;
     }
     nav a {
       text-decoration: none;
-      color: #333;
+      color: var(--text-color);
       font-weight: bold;
       transition: color 0.3s;
     }
     nav a:hover {
-      color: #0077b6;
+      color: var(--link-color);
     }
     section {
       max-width: 900px;
       margin: 40px auto;
       padding: 25px;
-      background: white;
+      background: var(--card-bg);
       border-radius: 14px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px var(--shadow);
+      transition: background 0.3s, color 0.3s;
     }
     section h2 {
       margin-top: 0;
-      color: #0077b6;
+      color: var(--link-color);
     }
     .skills span {
       display: inline-block;
@@ -74,6 +110,10 @@
       color: #0277bd;
       border-radius: 8px;
       font-size: 0.9em;
+    }
+    body.dark .skills span {
+      background: #37474f;
+      color: #80d8ff;
     }
     .timeline {
       position: relative;
@@ -87,7 +127,7 @@
       top: 0;
       bottom: 0;
       width: 3px;
-      background: #4facfe;
+      background: var(--link-color);
     }
     .timeline-item {
       margin-bottom: 20px;
@@ -101,8 +141,8 @@
       width: 15px;
       height: 15px;
       border-radius: 50%;
-      background: #00f2fe;
-      border: 2px solid white;
+      background: var(--link-color);
+      border: 2px solid var(--card-bg);
     }
     footer {
       text-align: center;
@@ -117,7 +157,7 @@
       font-size: 1.2em;
       text-decoration: none;
       color: white;
-      background: #0077b6;
+      background: var(--link-color);
       padding: 8px 14px;
       border-radius: 8px;
       transition: background 0.3s;
@@ -131,6 +171,7 @@
 
   <!-- HEADER -->
   <header>
+    <button id="toggle-dark">🌙</button>
     <img src="https://i.imgur.com/4ZQZ4Z0.png" alt="Avatar"> <!-- thay link avatar -->
     <h1>Xin chào, tôi là AnhHa</h1>
     <p>Người yêu thích khoa học, lịch sử, văn hóa & giáo dục</p>
@@ -204,6 +245,15 @@
   <footer>
     <p>© 2025 AnhHa | Thiết kế với ❤️ và GitHub Pages</p>
   </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    const toggleBtn = document.getElementById("toggle-dark");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    });
+  </script>
 
 </body>
 </html>
